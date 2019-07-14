@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import SimpleMap from './simple_map';
+import Flat from './flat';
 class App extends Component {
     constructor(props) {
         super(props);
@@ -6,7 +8,14 @@ class App extends Component {
     }
     render() {
         return (
-            <p>My app rendering</p>
+            <div>
+                <div className="flat-list">
+                    <Flat />
+                </div>
+                <div className="map-container">
+                    <SimpleMap />
+                </div>
+            </div>
         )
     }
 }
