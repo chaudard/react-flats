@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import FlatMarker from './flatmarker.jsx';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 48.875627333,
+      lng: 2.3441685
     },
     zoom: 11
   };
@@ -22,9 +23,9 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
+          <FlatMarker
+            lat={this.props.lat}
+            lng={this.props.lng}
             text="My Marker"
           />
         </GoogleMapReact>

@@ -13,13 +13,19 @@ class App extends Component {
         this.setState({selectedFlat: flat});
     }
     render() {
+        let lat = 48.875627333;
+        let lng = 2.3441685;
+        if (this.state.selectedFlat) {
+            lat = this.state.selectedFlat.lat;
+            lng = this.state.selectedFlat.lng;
+        }
         return (
             <div>
                 <div className="flat-list">
                     <FlatList flats={flats} selectFlatFunction={this.selectFlat} selectedFlat={this.state.selectedFlat}/>
                 </div>
                 <div className="map-container">
-                    <SimpleMap />
+                    <SimpleMap lat={lat} lng={lng}/>
                 </div>
             </div>
         )
