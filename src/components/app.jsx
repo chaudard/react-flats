@@ -9,11 +9,14 @@ class App extends Component {
             selectedFlat: null
         };
     }
+    selectFlat = (flat) => {
+        this.setState({selectedFlat: flat});
+    }
     render() {
         return (
             <div>
                 <div className="flat-list">
-                    <FlatList flats={flats} />
+                    <FlatList flats={flats} selectFlatFunction={this.selectFlat} selectedFlat={this.state.selectedFlat}/>
                 </div>
                 <div className="map-container">
                     <SimpleMap />
