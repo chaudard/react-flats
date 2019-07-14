@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import SimpleMap from './simple_map';
-import Flat from './flat';
+import flats from '../../assets/data/flats.js';
+import FlatList from './flat-list';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            selectedFlat: null
+        };
     }
     render() {
         return (
             <div>
                 <div className="flat-list">
-                    <Flat />
+                    <FlatList flats={flats} />
                 </div>
                 <div className="map-container">
                     <SimpleMap />
