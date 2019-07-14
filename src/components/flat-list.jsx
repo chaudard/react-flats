@@ -6,7 +6,7 @@ class FlatList extends Component {
         this.state = {};
     }
     render() {
-        return this.props.flats.map(flat => { return <Flat key={flat.name}/> })       
+        return this.props.flats.map(flat => { return <Flat flat={flat} key={flat.name}/> })       
     }
 }
 export default FlatList;
